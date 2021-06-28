@@ -1,4 +1,7 @@
-all: HLDS_RUP3_GP65NB60_BRAND_PB01-05.bin
+all: mt1887_fw.py HLDS_RUP3_GP65NB60_BRAND_PB01-05.bin
+
+%.py: %.ksy
+	kaitai-struct-compiler -t python $<
 
 GP65NB60_SVC-Code-NB60_PB01.zip:
 	curl -o $@ 'https://gscs-b2c.lge.com/downloadFile?fileId=msh2u1B45xbhf6lGTrGQ8Q'
@@ -15,6 +18,6 @@ HLDS_RUP3_GP65NB60_BRAND_PB01-05.bin: HDLSBIN.ZIP
 	unzip -DD $<
 
 clean:
-	rm -f HLDS_RUP3_GP65NB60_BRAND_PB01-05.bin HDLSBIN.ZIP GP65NB60_SVC-Code-NB60_PB01.exe GP65NB60_SVC-Code-NB60_PB01.zip
+	rm -f mt1887_fw.py HLDS_RUP3_GP65NB60_BRAND_PB01-05.bin HDLSBIN.ZIP GP65NB60_SVC-Code-NB60_PB01.exe GP65NB60_SVC-Code-NB60_PB01.zip
 
 .PHONY: all clean
