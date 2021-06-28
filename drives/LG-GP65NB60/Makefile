@@ -6,7 +6,7 @@ GP65NB60_SVC-Code-NB60_PB01.zip:
 GP65NB60_SVC-Code-NB60_PB01.exe: GP65NB60_SVC-Code-NB60_PB01.zip GP65NB60_SVC-Code-NB60_PB01.zip.sha256sum
 	sha256sum -c $<.sha256sum
 	unzip -DD $<
-	mv "GP65NB60_SVC Code NB60_PB01.exe" GP65NB60_SVC-Code-NB60_PB01.exe
+	mv "GP65NB60_SVC Code NB60_PB01.exe" $@
 
 HDLSBIN.ZIP: GP65NB60_SVC-Code-NB60_PB01.exe extract_zip_resource.py
 	python3 extract_zip_resource.py -o $@ $< 2912140 932363
