@@ -1,4 +1,4 @@
-# Disc Drive RE
+# Optical Disc Drive RE
 
 Reverse engineering notes and utilities for various models of DVD drives.
 
